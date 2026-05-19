@@ -2,112 +2,110 @@
 ---
 
 <section
-  class="mx-auto grid min-h-screen w-full max-w-7xl gap-10 px-5 py-10 text-slate-950 sm:px-8 lg:grid-cols-[340px_1fr] lg:gap-16 lg:px-12 lg:py-16"
+  class="mx-auto grid min-h-screen w-full max-w-[1180px] gap-12 bg-white px-6 py-10 text-[#0f1115] sm:px-10 lg:grid-cols-[280px_minmax(0,760px)] lg:justify-center lg:gap-20 lg:px-12 lg:py-20"
   aria-labelledby="profile-title"
 >
-  <aside class="lg:sticky lg:top-16 lg:h-fit">
+  <aside class="lg:sticky lg:top-20 lg:h-fit">
     <img
-      class="mb-10 size-40 rounded-full object-cover shadow-[0_20px_70px_rgba(15,23,42,0.14)] sm:size-48"
+      class="mb-8 size-28 rounded-full bg-[#f2f3f5] object-cover"
       src="/profile.svg"
       alt="秦駿太朗のプロフィール画像"
     />
 
-    <p class="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-sky-600">
-      Self introduction
+    <p class="mb-3 text-[12px] font-medium uppercase leading-none tracking-[0.16em] text-[#8a8f98]">
+      Profile
     </p>
 
-    <h1 id="profile-title" class="text-5xl font-black leading-tight sm:text-6xl">
-      秦駿太朗
+    <h1 id="profile-title" class="text-[40px] font-extrabold leading-[1.05] tracking-normal">
+      Hata Shuntaro
     </h1>
 
-    <p class="mt-6 max-w-sm text-xl font-semibold leading-relaxed text-slate-500">
-      18歳 / 徳島県出身<br />
-      フロントエンドとUIデザインが得意です。
+    <p class="mt-4 max-w-[250px] text-[13.5px] leading-[1.85] text-[#8a8f98]">
+      徳島出身 | 18歳。フロントエンドとデザインの分野が得意です。
     </p>
-
-    <div class="mt-10 rounded-[2rem] border border-white bg-white/80 p-6 shadow-[0_20px_70px_rgba(15,23,42,0.08)]">
-      <h2 class="text-lg font-black">趣味・特技</h2>
-      <ul class="mt-4 grid gap-3 text-base font-semibold text-slate-600">
-        <li>ゴルフ</li>
-        <li>紅茶</li>
-        <li>ゲーム</li>
-      </ul>
-    </div>
   </aside>
 
-  <section aria-labelledby="about-heading">
-    <div class="mb-8">
-      <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-400">
+  <section class="min-w-0" aria-labelledby="about-heading">
+    <div class="mb-5">
+      <h2 id="about-heading" class="text-[15px] font-semibold leading-[1.55] tracking-normal text-[#8a8f98]">
         All about me
-      </p>
-      <h2 id="about-heading" class="mt-2 text-3xl font-black sm:text-4xl">
-        自己紹介Webページ
       </h2>
+      <p class="sr-only">自己紹介Webページ</p>
     </div>
 
-    <div class="grid auto-rows-[minmax(190px,auto)] grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
-      <article class="rounded-[2rem] bg-sky-50 p-7 shadow-[0_20px_70px_rgba(15,23,42,0.08)]">
-        <span class="grid size-12 place-items-center rounded-2xl bg-sky-500 text-sm font-black text-white">
-          01
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-6">
+      <article class="rounded-[18px] border border-white bg-[#e8f2fd] p-5 shadow-[0_10px_30px_rgba(15,17,21,0.04)] md:col-span-2">
+        <span class="grid size-9 place-items-center rounded-lg bg-[#4f7bff] text-[12px] font-semibold text-white">
+          基
         </span>
-        <h3 class="mt-8 text-xl font-black">基本情報</h3>
-        <ul class="mt-4 grid gap-2 text-base font-semibold leading-relaxed text-slate-600">
+        <h3 class="mt-8 text-[15px] font-semibold leading-[1.4]">基本情報</h3>
+        <ul class="mt-3 grid gap-1 text-[13px] leading-[1.7] text-[#6e747d]">
           <li>名前：秦駿太朗</li>
           <li>年齢：18歳</li>
           <li>出身地：徳島県</li>
         </ul>
       </article>
 
-      <article class="rounded-[2rem] bg-white p-7 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:col-span-2">
-        <span class="grid size-12 place-items-center rounded-2xl bg-emerald-500 text-sm font-black text-white">
-          02
+      <article class="rounded-[18px] border border-white bg-[#fcebe6] p-5 shadow-[0_10px_30px_rgba(15,17,21,0.04)] md:col-span-2">
+        <span class="grid size-9 place-items-center rounded-lg bg-[#ff6719] text-[12px] font-semibold text-white">
+          UI
         </span>
-        <h3 class="mt-8 text-xl font-black">徳島県について</h3>
-        <p class="mt-4 text-base font-semibold leading-8 text-slate-600">
-          徳島県は、阿波おどりや鳴門の渦潮が有名な自然豊かな場所です。
-          海や山が近く、落ち着いた環境の中で生活できるところが魅力です。
+        <h3 class="mt-8 text-[15px] font-semibold leading-[1.4]">得意分野</h3>
+        <p class="mt-3 text-[13px] leading-[1.7] text-[#6e747d]">
+          見やすさと使いやすさを考えた画面作り。
         </p>
       </article>
 
-      <article class="rounded-[2rem] bg-orange-50 p-7 shadow-[0_20px_70px_rgba(15,23,42,0.08)]">
-        <span class="grid size-12 place-items-center rounded-2xl bg-orange-500 text-sm font-black text-white">
-          03
+      <article class="rounded-[18px] border border-white bg-[#fff1e6] p-5 shadow-[0_10px_30px_rgba(15,17,21,0.04)] md:col-span-2">
+        <span class="grid size-9 place-items-center rounded-lg bg-[#ff6719] text-[12px] font-semibold text-white">
+          好
         </span>
-        <h3 class="mt-8 text-xl font-black">好きなこと</h3>
-        <ol class="mt-4 list-decimal space-y-2 pl-5 text-base font-semibold leading-relaxed text-slate-600">
-          <li>ゲームで考えながら遊ぶこと</li>
-          <li>紅茶を選んでゆっくり飲むこと</li>
-          <li>ゴルフで体を動かすこと</li>
-        </ol>
+        <h3 class="mt-8 text-[15px] font-semibold leading-[1.4]">好きなこと</h3>
+        <ul class="mt-3 flex flex-wrap gap-2 text-[12px] font-medium text-[#6e747d]">
+          <li class="rounded-full bg-white/80 px-3 py-1.5">ゲーム</li>
+          <li class="rounded-full bg-white/80 px-3 py-1.5">紅茶</li>
+          <li class="rounded-full bg-white/80 px-3 py-1.5">ゴルフ</li>
+        </ul>
       </article>
 
-      <article class="rounded-[2rem] bg-slate-950 p-7 text-white shadow-[0_20px_70px_rgba(15,23,42,0.16)] md:col-span-2 xl:row-span-2">
-        <span class="grid size-12 place-items-center rounded-2xl bg-white text-sm font-black text-slate-950">
-          04
+      <article class="rounded-[18px] border border-[#ecedef] bg-white p-6 shadow-[0_10px_30px_rgba(15,17,21,0.04)] md:col-span-4">
+        <span class="inline-flex rounded-full bg-[#f2f3f5] px-3 py-1 text-[12px] font-medium text-[#6e747d]">
+          自己PR
         </span>
-        <h3 class="mt-8 text-2xl font-black">自己PR</h3>
-        <p class="mt-5 text-lg font-semibold leading-9 text-slate-200">
-          画面の見やすさや使いやすさを考えながら、Webページを作ることが好きです。<br />
+        <p class="mt-8 max-w-[520px] text-[18px] font-semibold leading-[1.9] text-[#0f1115]">
+          情報を整理して、伝わるWebページを作ります。
+        </p>
+        <p class="mt-4 max-w-[560px] text-[13.5px] leading-[1.9] text-[#6e747d]">
           見た目だけでなく、どこを押せばよいか、情報が伝わりやすいかを意識して制作します。
         </p>
       </article>
 
-      <article class="rounded-[2rem] bg-rose-50 p-7 shadow-[0_20px_70px_rgba(15,23,42,0.08)]">
-        <span class="grid size-12 place-items-center rounded-2xl bg-rose-500 text-sm font-black text-white">
-          05
+      <article class="rounded-[18px] border border-white bg-[#f2f3f5] p-5 shadow-[0_10px_30px_rgba(15,17,21,0.04)] md:col-span-2">
+        <span class="inline-flex rounded-full bg-white px-3 py-1 text-[12px] font-medium text-[#6e747d]">
+          Tokushima
         </span>
-        <h3 class="mt-8 text-xl font-black">得意分野</h3>
-        <p class="mt-4 text-base font-semibold leading-8 text-slate-600">
-          HTMLとCSSを使って、情報を整理したレイアウトを作ることに興味があります。
+        <h3 class="mt-8 text-[15px] font-semibold leading-[1.4]">徳島県について</h3>
+        <p class="mt-3 text-[13px] leading-[1.8] text-[#6e747d]">
+          阿波おどりや鳴門の渦潮が有名な自然豊かな場所です。海や山が近く、落ち着いた環境が魅力です。
         </p>
       </article>
 
-      <article class="rounded-[2rem] bg-white p-7 shadow-[0_20px_70px_rgba(15,23,42,0.08)] md:col-span-2 xl:col-span-1">
-        <span class="grid size-12 place-items-center rounded-2xl bg-slate-900 text-sm font-black text-white">
-          06
+      <article class="rounded-[18px] border border-[#ecedef] bg-white p-5 shadow-[0_10px_30px_rgba(15,17,21,0.04)] md:col-span-3">
+        <span class="grid size-9 place-items-center rounded-lg bg-[#0f1115] text-[12px] font-semibold text-white">
+          学
         </span>
-        <h3 class="mt-8 text-xl font-black">これから</h3>
-        <p class="mt-4 text-base font-semibold leading-8 text-slate-600">
+        <h3 class="mt-8 text-[15px] font-semibold leading-[1.4]">学習中</h3>
+        <p class="mt-3 text-[13px] leading-[1.8] text-[#6e747d]">
+          HTMLとCSSの構造を理解しながら、表現の幅を広げています。
+        </p>
+      </article>
+
+      <article class="rounded-[18px] bg-[#0f1115] p-5 text-white shadow-[0_14px_36px_rgba(15,17,21,0.12)] md:col-span-3">
+        <span class="grid size-9 place-items-center rounded-lg bg-white text-[12px] font-semibold text-[#0f1115]">
+          先
+        </span>
+        <h3 class="mt-8 text-[15px] font-semibold leading-[1.4]">これから</h3>
+        <p class="mt-3 text-[13px] leading-[1.8] text-white/70">
           UIデザインの知識を増やし、見る人にとって使いやすいサイトを作れるようになりたいです。
         </p>
       </article>

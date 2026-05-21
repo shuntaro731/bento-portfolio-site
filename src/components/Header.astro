@@ -4,24 +4,32 @@ import shuntaroLogo from "../assets/shuntaro.svg";
 const navItems = ["Profile", "Tokushima", "PR"];
 ---
 
-<header class="w-full bg-[#f5f0f0] pt-16">
-  <div class="mx-auto flex w-full max-w-[82rem] items-center justify-between px-6 md:px-8">
-    <a href="/" class="block" aria-label="shuntaro home">
-      <img class="h-5 w-auto" src={shuntaroLogo.src} alt="shuntaro" />
+<header class="relative w-full bg-[#f5f0f0] p-16">
+  <div class="flex w-full items-center justify-between">
+    <!-- ロゴ -->
+    <a href="/" class="block">
+      <img class="h-5 w-auto" src={shuntaroLogo.src} alt="shuntaroのlogo" />
     </a>
 
+    <!-- navバー -->
     <nav
-      class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 rounded-full bg-[#ebe5e5] p-1 font-['Satoshi',Inter,sans-serif] text-[0.8125rem] font-bold text-black sm:flex"
+      class="fixed bottom-16 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full bg-[#ebe5e5] p-1 text-sm font-bold text-black sm:absolute sm:bottom-auto sm:top-16"
       aria-label="Main navigation"
     >
+      <span
+        data-nav-indicator
+        class="absolute left-0 top-1 bottom-1 rounded-full bg-white transition-all duration-300 ease-out"
+        aria-hidden="true"
+      ></span>
       {
         navItems.map((item, index) => (
           <a
             href={`#${item.toLowerCase()}`}
+            data-nav-link
             class:list={[
-              "rounded-full px-4 py-1.5 leading-none transition-colors hover:bg-white",
-              index === 0 && "bg-white",
+              "relative z-10 rounded-full px-4 py-1.5 leading-none transition-colors hover:text-black/70",
             ]}
+            aria-current={index === 0 ? "page" : undefined}
           >
             {item}
           </a>
@@ -29,11 +37,43 @@ const navItems = ["Profile", "Tokushima", "PR"];
       }
     </nav>
 
+    <!-- Contact -->
     <a
-      href="mailto:"
-      class="font-['Satoshi',Inter,sans-serif] text-base font-bold leading-none text-black transition-opacity hover:opacity-70"
+      href="メールを送信するボタn"
+      class="text-base font-bold leading-none text-black transition-opacity hover:opacity-70"
     >
       Contact 👋
     </a>
   </div>
 </header>
+
+<!-- menuバーの状態スクリプト -->
+<script>
+  const navLinks = document.querySelectorAll("[data-nav-link]");
+  const navIndicator = document.querySelector("[data-nav-indicator]");
+
+  const setActiveNav = () => {
+    const activeHash = location.hash || "#profile";
+
+    navLinks.forEach((link) => {
+      const isActive = link.getAttribute("href") === activeHash;
+
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+
+        if (navIndicator instanceof HTMLElement && link instanceof HTMLElement) {
+          navIndicator.style.width = `${link.offsetWidth}px`;
+          navIndicator.style.transform = `translateX(${link.offsetLeft}px)`;
+        }
+
+        return;
+      }
+
+      link.removeAttribute("aria-current");
+    });
+  };
+
+  setActiveNav();
+  window.addEventListener("hashchange", setActiveNav);
+  window.addEventListener("resize", setActiveNav);
+</script>

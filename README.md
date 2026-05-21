@@ -2,8 +2,8 @@
 Astroとは、Webサイトを構築するためのフレームワークで、静的サイトジェネレーターの一つです。マルチページアプリケーション（MPA）という仕組みで動いているため、初期表示が早い、クライアント側の負荷軽減、SEO対策など様々な恩恵が得られます。
 
 # 各種リンク
-- GitHub: [https://github.com/shuntaro731/goldenweek-site]
-- Figma: [https://www.figma.com/design/1TUjD1Lqm451Ca5JoeEaEv/WF11?node-id=0-1&t=4zi6S6nfYdpyqIek-1]
+- GitHub: [https://github.com/shuntaro731/bento-portfolio-site]
+- Figma: [https://www.figma.com/design/1TUjD1Lqm451Ca5JoeEaEv/WF11?node-id=395-30&t=gZQtOxeoaWfdmrLH-1]
 # 実行手順
 
 ## 必要な環境

@@ -6,7 +6,7 @@ const { class: className = "" } = Astro.props;
 
 <article
   class:list={[
-    "profile-card flex w-full min-w-0 flex-col justify-end rounded-4xl bg-white p-7 md:aspect-[465/228] md:p-8",
+    "profile-card flex w-full min-w-0 flex-col justify-start gap-8 overflow-hidden rounded-4xl bg-white p-6 sm:aspect-[465/228] lg:aspect-auto",
     className,
   ]}
   aria-labelledby="profile-title"
@@ -16,21 +16,21 @@ const { class: className = "" } = Astro.props;
     width={meImage.width}
     height={meImage.height}
     alt="Shuntarouの顔アイコン"
-    class="mb-6 size-18 object-contain"
+    class="size-16 object-contain sm:size-18"
   />
 
   <div class="min-w-0 space-y-2">
     <h1 id="profile-title" class="min-w-0 leading-tight text-black lg:whitespace-nowrap">
       <span class="text-base font-normal">I'm</span>
-      <span class="ml-2 font-serif-display text-3xl font-bold">
+      <span class="ml-2 font-serif-display text-2xl font-bold">
         Shuntarou.
       </span>
-      <span class="text-sm font-medium">
+      <span class="text-xs font-medium">
         a developer and designer from Tokushima.
       </span>
     </h1>
 
-    <p class="max-w-xl text-sm font-medium leading-relaxed text-black/40">
+    <p class="line-clamp-2 max-w-xl text-xs font-medium leading-relaxed text-black/40 sm:hidden lg:block">
       こんにちわ、IT学科1年次の秦駿太朗です。出身は徳島で、趣味はゴルフ、Podcast、ゲーム(MOBA)などです。よろしくお願いします。
     </p>
   </div>

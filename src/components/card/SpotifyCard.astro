@@ -6,13 +6,13 @@ const { class: className = "" } = Astro.props;
 
 <article
   class:list={[
-    "flex aspect-square min-w-0 flex-col justify-between rounded-4xl bg-white p-8",
+    "flex aspect-square min-w-0 flex-col justify-between rounded-4xl bg-white p-6 lg:aspect-auto",
     className,
   ]}
   aria-labelledby="spotify-title"
 >
   <!-- アイコン -->
-  <img src={spotifyIcon.src} alt="" class="size-12" aria-hidden="true" />
+  <img src={spotifyIcon.src} alt="" class="size-11" aria-hidden="true" />
 
   <div class="min-w-0">
     <p class="text-xs font-bold leading-none text-black/40">最近再生した曲</p>

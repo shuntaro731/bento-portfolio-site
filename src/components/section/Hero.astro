@@ -8,9 +8,9 @@ import SpotifyCard from "../card/SpotifyCard.astro";
   <Header />
 
   <div
-    class="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 pt-10 md:grid-cols-2 lg:grid-cols-4"
+    class="mx-auto grid w-full max-w-md grid-cols-1 gap-5 px-6 pt-10 sm:w-fit sm:max-w-full sm:grid-cols-[repeat(2,minmax(0,13rem))] lg:grid-cols-[repeat(3,14.5rem)] lg:auto-rows-[14.5rem]"
   >
-    <ProfileCard class="md:col-span-2 lg:col-span-2" />
-    <SpotifyCard />
+    <ProfileCard class="sm:col-span-2 lg:h-full" />
+    <SpotifyCard class="lg:h-full" />
   </div>
 </section>

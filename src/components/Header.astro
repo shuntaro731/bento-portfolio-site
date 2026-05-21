@@ -13,7 +13,7 @@ const navItems = ["Profile", "Tokushima", "PR"];
 
     <!-- navバー -->
     <nav
-      class="fixed bottom-16 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full bg-[#ebe5e5] p-1 text-sm font-bold sm:absolute sm:bottom-auto sm:top-16"
+      class="fixed bottom-16 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full bg-[#ebe5e5] p-1 text-sm font-bold sm:absolute sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2"
       aria-label="Main navigation"
     >
       <span
@@ -43,13 +43,14 @@ const navItems = ["Profile", "Tokushima", "PR"];
       href="mailto"
       class="text-base font-bold leading-none transition-opacity hover:opacity-70"
     >
-      Contact 👋
+      Contact&nbsp;&nbsp;👋
     </a>
   </div>
 </header>
 
 <!-- menuバーの状態スクリプト -->
 <script>
+  // ナビゲーションをjs側で取得
   const navLinks = document.querySelectorAll("[data-nav-link]");
   const navIndicator = document.querySelector("[data-nav-indicator]");
 
@@ -64,6 +65,7 @@ const navItems = ["Profile", "Tokushima", "PR"];
         hasActiveLink = true;
         link.setAttribute("aria-current", "page");
         if (navIndicator instanceof HTMLElement && link instanceof HTMLElement) {
+          // リンクに移動するときtraslateXで動かす
           navIndicator.style.width = `${link.offsetWidth}px`;
           navIndicator.style.transform = `translateX(${link.offsetLeft}px)`;
         }
@@ -73,6 +75,7 @@ const navItems = ["Profile", "Tokushima", "PR"];
       link.removeAttribute("aria-current");
     });
 
+    // 一致するリンクがなかった場合隠す
     if (!hasActiveLink && navIndicator instanceof HTMLElement) {
       navIndicator.style.width = "0";
     }

@@ -1,0 +1,50 @@
+---
+const { class: className = "" } = Astro.props;
+---
+
+<article
+  class:list={[
+    "flex aspect-square min-w-0 flex-col justify-between rounded-4xl bg-white p-8",
+    className,
+  ]}
+  aria-labelledby="spotify-title"
+>
+  <div
+    class="flex size-14 items-center justify-center rounded-full bg-[#6ad2b3] text-white"
+    aria-hidden="true"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      class="size-9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.1 8.4c3.9-1.1 8.3-.7 11.6 1.1"
+        stroke="currentColor"
+        stroke-width="2.1"
+        stroke-linecap="round"
+      />
+      <path
+        d="M6.8 12c2.9-.8 6.4-.5 9 1"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M7.5 15.4c2-.5 4.6-.3 6.5.7"
+        stroke="currentColor"
+        stroke-width="1.6"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>
+
+  <div class="min-w-0">
+    <p class="text-sm font-bold leading-none text-black/40">最近再生した曲</p>
+    <h2 id="spotify-title" class="mt-2 truncate text-3xl font-black leading-tight text-black">
+      都落ち
+    </h2>
+    <p class="mt-1 truncate text-base font-bold leading-tight text-black">ヨルシカ</p>
+  </div>
+</article>

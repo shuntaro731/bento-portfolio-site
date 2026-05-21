@@ -1,0 +1,37 @@
+---
+import meImage from "../../assets/me.png";
+
+const { class: className = "" } = Astro.props;
+---
+
+<article
+  class:list={[
+    "profile-card flex min-h-56 w-full min-w-0 flex-col justify-end rounded-4xl bg-white p-8",
+    className,
+  ]}
+  aria-labelledby="profile-title"
+>
+  <img
+    src={meImage.src}
+    width={meImage.width}
+    height={meImage.height}
+    alt="Shuntarouの顔アイコン"
+    class="mb-8 size-24 object-contain"
+  />
+
+  <div class="min-w-0 space-y-3">
+    <h1 id="profile-title" class="min-w-0 leading-tight text-black">
+      <span class="text-lg font-normal">I'm</span>
+      <span class="ml-2 font-serif-display text-4xl font-bold">
+        Shuntarou.
+      </span>
+      <span class="text-[15px] font-medium">
+        a developer and designer from Tokushima.
+      </span>
+    </h1>
+
+    <p class="max-w-2xl text-sm font-medium leading-relaxed text-black/40">
+      こんにちわ、IT学科1年次の秦駿太朗です。出身は徳島で、趣味はゴルフ、Podcast、ゲーム(MOBA)などです。よろしくお願いします。
+    </p>
+  </div>
+</article>

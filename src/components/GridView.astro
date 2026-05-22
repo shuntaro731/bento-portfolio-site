@@ -4,14 +4,33 @@ import SpotifyCard from "./card/SpotifyCard.astro";
 import GitHubCard from "./card/GitHubCard.astro";
 import TokushimaCard from "./card/TokushimaCard.astro";
 import PodcastCard from "./card/PodcastCard.astro";
+import YouTuberCard from "./card/YouTuberCard.astro";
 ---
 
 <div
-  class="mx-auto grid w-full max-w-md grid-cols-1 gap-5 px-6 pt-10 sm:w-fit sm:max-w-full sm:grid-cols-[repeat(2,minmax(0,13rem))] lg:grid-cols-[repeat(3,14.5rem)] lg:auto-rows-[14.5rem]"
+  class="mx-auto grid w-full max-w-md grid-cols-1 items-start gap-5 px-6 pt-10 sm:w-fit sm:max-w-full sm:grid-cols-[repeat(2,minmax(0,13rem))] lg:grid-cols-[repeat(4,14.5rem)] lg:auto-rows-[14.5rem]"
 >
-  <ProfileCard class="sm:col-span-2 lg:h-full" />
-  <SpotifyCard class="lg:h-full" />
-  <TokushimaCard class="sm:col-span-2 lg:row-span-2 lg:h-full" />
-  <GitHubCard class="lg:col-start-3 lg:row-start-2 lg:h-full" />
-  <PodcastCard class="sm:col-span-2" />
+  <div class="aspect-[465/228] sm:col-span-2 lg:col-start-1 lg:row-start-1">
+    <ProfileCard />
+  </div>
+
+  <div class="aspect-square lg:col-start-3 lg:row-start-1">
+    <SpotifyCard />
+  </div>
+
+  <div class="aspect-square sm:col-span-2 lg:col-start-1 lg:row-span-2 lg:row-start-2">
+    <TokushimaCard />
+  </div>
+
+  <div class="aspect-square lg:col-start-3 lg:row-start-2">
+    <GitHubCard />
+  </div>
+
+  <div class="aspect-[486/187] sm:col-span-2 lg:col-start-3 lg:row-start-3 lg:aspect-auto lg:h-full">
+    <PodcastCard />
+  </div>
+
+  <div class="aspect-[256/231] lg:col-start-3 lg:row-start-4">
+    <YouTuberCard />
+  </div>
 </div>

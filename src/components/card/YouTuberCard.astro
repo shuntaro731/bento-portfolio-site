@@ -1,0 +1,35 @@
+---
+import nobamanImage from "../../assets/nobaman.png";
+
+const { class: className = "" } = Astro.props;
+const nobamanUrl = "https://www.youtube.com/channel/UCTW2tw0Mhho72MojB1L48IQ";
+---
+
+<a
+  href={nobamanUrl}
+  target="_blank"
+  rel="noreferrer"
+  class:list={[
+    "flex size-full min-w-0 flex-col justify-between overflow-hidden rounded-4xl bg-white p-6 transition-opacity hover:opacity-90",
+    className,
+  ]}
+  aria-labelledby="youtuber-title"
+>
+  <img
+    src={nobamanImage.src}
+    width={nobamanImage.width}
+    height={nobamanImage.height}
+    alt="のばまんのアイコン"
+    class="mx-auto size-26 rounded-sm object-cover"
+  />
+
+  <div class="min-w-0">
+    <p class="text-xs font-bold leading-none text-black/40">好きなYoutuber</p>
+    <h2
+      id="youtuber-title"
+      class="mt-3 truncate text-2xl font-bold leading-tight text-black"
+    >
+      のばまん (nobaman)
+    </h2>
+  </div>
+</a>

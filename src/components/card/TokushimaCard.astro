@@ -6,7 +6,7 @@ const { class: className = "" } = Astro.props;
 
 <article
   class:list={[
-    "group relative size-full min-w-0 overflow-hidden rounded-4xl bg-[#d8d8d8]",
+    "group relative size-full overflow-hidden rounded-4xl border border-white bg-[#d8d8d8]",
     className,
   ]}
   aria-labelledby="tokushima-title"
@@ -16,12 +16,12 @@ const { class: className = "" } = Astro.props;
     width={tokushimaImage.width}
     height={tokushimaImage.height}
     alt="徳島の夜景"
-    class="size-full object-cover brightness-75 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
+    class="size-full object-cover brightness-60 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
   />
 
   <h2
     id="tokushima-title"
-    class="absolute bottom-6 left-6 max-w-[80%] truncate rounded-xl bg-white px-4 py-2 text-base font-bold leading-none text-black shadow-sm"
+    class="absolute bottom-6 left-6 max-w-[80%] truncate rounded-xl bg-page px-4 py-3 text-base font-bold leading-none text-black shadow-sm"
   >
     live in Tokushima&nbsp;&nbsp;🏝️
   </h2>

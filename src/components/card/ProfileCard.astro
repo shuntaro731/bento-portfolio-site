@@ -6,7 +6,7 @@ const { class: className = "" } = Astro.props;
 
 <article
   class:list={[
-    "grid size-full min-w-0 grid-rows-[auto_1fr] overflow-hidden rounded-4xl bg-white p-6",
+    "grid size-full grid-rows-[auto_1fr] rounded-4xl bg-white p-6",
     className,
   ]}
   aria-labelledby="profile-title"
@@ -22,7 +22,7 @@ const { class: className = "" } = Astro.props;
   <div class="mt-5 min-w-0 self-end sm:mt-0">
     <h1 id="profile-title" class="truncate leading-tight text-black">
       <span class="text-base font-normal">I'm</span>
-      <span class="ml-2 font-serif-display text-2xl font-bold">
+      <span class="ml-1 font-serif-display text-[1.65rem] font-bold">
         Shuntaro.
       </span>
       <span class="text-xs font-medium">

@@ -6,7 +6,7 @@ const { class: className = "" } = Astro.props;
 
 <article
   class:list={[
-    "relative size-full min-w-0 overflow-hidden rounded-4xl bg-[#d8d8d8]",
+    "group relative size-full min-w-0 overflow-hidden rounded-4xl bg-[#d8d8d8]",
     className,
   ]}
   aria-labelledby="tokushima-title"
@@ -16,7 +16,7 @@ const { class: className = "" } = Astro.props;
     width={tokushimaImage.width}
     height={tokushimaImage.height}
     alt="徳島の夜景"
-    class="size-full object-cover"
+    class="size-full object-cover brightness-75 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
   />
 
   <h2

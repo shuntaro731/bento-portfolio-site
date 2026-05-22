@@ -1,12 +1,12 @@
-# Hero Bento Grid 実装計画
+# Profile Bento Grid 実装計画
 
 ## Summary
 
-Pencilで確認した `docs/design/hero.pen` の `Profile` フレームを基準に、`src/components/section/Hero.astro` にbento-gridを実装する。Pencil上のメモ通り、左上プロフィールカードは画像貼り付けではなくHTML/Tailwindで再構成する。
+Pencilで確認した `docs/design/hero.pen` の `Profile` フレームを基準に、`src/components/section/ProfileSection.astro` と `src/components/GridView.astro` にbento-gridを実装する。Pencil上のメモ通り、左上プロフィールカードは画像貼り付けではなくHTML/Tailwindで再構成する。
 
 ## Key Changes
 
-- Hero全体は背景 `#f7f1f1`、中央寄せのbento-grid、カード間隔はPencilの規則に近い余白で構成する。
+- Profileセクション全体は背景 `#f7f1f1`、中央寄せのbento-grid、カード間隔はPencilの規則に近い余白で構成する。
 - デスクトップではPencilの寸法比を基準に、約 `231px` 単位の列を組み合わせる。プロフィール / Tokushima / Bookは横2列相当、Spotify / GitHub / My work / YouTuberは横1列相当として配置する。
 - カード角丸は主に `rounded-4xl` を基準にし、Pencilの `32px` / `34px` に寄せる必要がある箇所だけ任意値を使う。内側余白は `p-8` を基準にTailwindで実装する。
 - 左上プロフィールカードは `src/assets/me.png`、英日テキスト、太字名を使ってコード化する。
@@ -23,7 +23,7 @@ Pencilで確認した `docs/design/hero.pen` の `Profile` フレームを基準
 - 追加予定: `public/works/` 配下の作品画像
   - `public/works/work-01.png`
   - `public/works/work-02.png`
-- 変更対象: `src/components/section/Hero.astro`
+- 変更対象: `src/components/section/ProfileSection.astro`, `src/components/GridView.astro`
 - 既存変更済みの `Header.astro` と `me.png` は巻き戻さない。
 
 ## Layout Notes

@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 @theme {
+  --color-page: #f5f0f0;
   --font-sans:
     "Satoshi", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -13,7 +14,6 @@
   html {
     font-family: var(--font-sans);
   }
-
   body {
     background: #ffffff;
     color: #0f1115;

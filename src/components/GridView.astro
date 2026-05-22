@@ -1,0 +1,15 @@
+---
+import ProfileCard from "./card/ProfileCard.astro";
+import SpotifyCard from "./card/SpotifyCard.astro";
+import GitHubCard from "./card/GitHubCard.astro";
+import TokushimaCard from "./card/TokushimaCard.astro";
+---
+
+<div
+  class="mx-auto grid w-full max-w-md grid-cols-1 gap-5 px-6 pt-10 sm:w-fit sm:max-w-full sm:grid-cols-[repeat(2,minmax(0,13rem))] lg:grid-cols-[repeat(3,14.5rem)] lg:auto-rows-[14.5rem]"
+>
+  <ProfileCard class="sm:col-span-2 lg:h-full" />
+  <SpotifyCard class="lg:h-full" />
+  <TokushimaCard class="sm:col-span-2 lg:row-span-2 lg:h-full" />
+  <GitHubCard class="lg:col-start-3 lg:row-start-2 lg:h-full" />
+</div>

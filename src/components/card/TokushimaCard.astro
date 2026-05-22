@@ -1,0 +1,28 @@
+---
+import tokushimaImage from "../../assets/Tokushima Ports of Call.jpg";
+
+const { class: className = "" } = Astro.props;
+---
+
+<article
+  class:list={[
+    "relative aspect-square min-w-0 overflow-hidden rounded-4xl bg-[#d8d8d8] lg:aspect-auto",
+    className,
+  ]}
+  aria-labelledby="tokushima-title"
+>
+  <img
+    src={tokushimaImage.src}
+    width={tokushimaImage.width}
+    height={tokushimaImage.height}
+    alt="徳島の夜景"
+    class="size-full object-cover"
+  />
+
+  <h2
+    id="tokushima-title"
+    class="absolute bottom-8 left-8 max-w-[80%] truncate rounded-xl bg-white px-4 py-2 text-base font-bold leading-none text-black shadow-sm"
+  >
+    live in Tokushima
+  </h2>
+</article>

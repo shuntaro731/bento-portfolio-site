@@ -15,14 +15,9 @@
   }
 
   body {
-    margin: 0;
     background: #ffffff;
     color: #0f1115;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
-  }
-
-  * {
-    box-sizing: border-box;
   }
 }

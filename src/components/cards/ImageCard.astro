@@ -8,15 +8,21 @@ const {
   image = tokushimaImage,
   imageAlt = "徳島の夜景",
   labelClass = "bg-page",
+  url = "",
 } = Astro.props;
 const imageSrc = image?.src ?? image;
 const imageWidth = image?.width;
 const imageHeight = image?.height;
+const Element = url ? "a" : "article";
 ---
 
-<article
+<Element
+  href={url || undefined}
+  target={url ? "_blank" : undefined}
+  rel={url ? "noreferrer" : undefined}
   class:list={[
     "group relative size-full overflow-hidden rounded-4xl",
+    url && "block transition-opacity hover:opacity-90",
     className,
   ]}
   aria-labelledby={titleId}
@@ -26,7 +32,7 @@ const imageHeight = image?.height;
     width={imageWidth}
     height={imageHeight}
     alt={imageAlt}
-    class="size-full object-cover brightness-60 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
+    class="size-full object-cover brightness-70 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
   />
 
   <h2
@@ -38,4 +44,4 @@ const imageHeight = image?.height;
   >
     {label}
   </h2>
-</article>
+</Element>

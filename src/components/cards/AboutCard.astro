@@ -1,0 +1,65 @@
+---
+import meImage from "../../assets/images/profile-avatar.png";
+
+// 中のstring要素をpropsで渡して汎用compoenntに
+const {
+  class: className = "",
+  titleId = "profile-title",
+  headingTag = "h1",
+  showImage = true,
+  image = meImage,
+  imageAlt = "Shuntarouの顔アイコン",
+  prefix = "I'm",
+  title = "Shuntaro.",
+  suffix = "a developer and designer from Tokushima.",
+  description = "こんにちわ、18歳の秦駿太朗です。出身は徳島で、趣味はゴルフ、Podcast、ゲーム(MOBA)などです。よろしくお願いします。",
+} = Astro.props;
+const imageSrc = image?.src ?? image;
+const imageWidth = image?.width;
+const imageHeight = image?.height;
+const Heading = headingTag;
+const hasImage = showImage && imageSrc;
+---
+
+<article
+  class:list={[
+    "grid size-full overflow-hidden rounded-4xl bg-white",
+    hasImage ? "grid-rows-[auto_1fr] p-6" : "p-8",
+    className,
+  ]}
+  aria-labelledby={titleId}
+>
+  {
+    showImage && imageSrc && (
+      <img
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+        class="size-16 object-contain sm:size-18"
+      />
+    )
+  }
+
+  <div class:list={["min-w-0", hasImage && "mt-5 self-end sm:mt-0"]}>
+    <Heading
+      id={titleId}
+      class:list={[hasImage && "truncate", "leading-tight text-black"]}
+    >
+      <span class="text-base font-normal">{prefix}</span>
+      <span class="ml-1 font-serif-display text-2xl font-bold">
+        {title}
+      </span>
+      {suffix && <span class="text-xs font-medium">{suffix}</span>}
+    </Heading>
+
+    <p
+      class:list={[
+        "mt-3 text-[13px] font-medium leading-relaxed text-black/40",
+        hasImage && "line-clamp-2",
+      ]}
+    >
+      {description}
+    </p>
+  </div>
+</article>

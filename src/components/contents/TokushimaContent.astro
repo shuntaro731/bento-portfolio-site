@@ -1,5 +1,6 @@
 ---
 import { CloudRain } from "lucide-astro";
+import AboutCard from "../cards/AboutCard.astro";
 import ImageCard from "../cards/ImageCard.astro";
 import awaodoriImage from "../../assets/images/awaodori.jpg";
 import museumImage from "../../assets/images/ootuka.jpg";
@@ -17,6 +18,7 @@ import museumImage from "../../assets/images/ootuka.jpg";
       image={awaodoriImage}
       imageAlt="阿波おどりの様子"
       labelClass="bg-white"
+      url="https://ja.wikipedia.org/wiki/阿波踊り"
     />
   </div>
 
@@ -66,23 +68,17 @@ import museumImage from "../../assets/images/ootuka.jpg";
     </div>
   </article>
 
-  <article
-    class="rounded-4xl bg-white p-8 sm:col-span-2 lg:col-start-1 lg:row-start-3 lg:aspect-auto lg:h-full"
-    aria-labelledby="tokushima-about-title"
-  >
-    <h2
-      id="tokushima-about-title"
-      class="text-base font-normal leading-tight text-black"
-    >
-      I live in
-      <span class="ml-1 font-serif-display text-2xl font-bold">
-        Tokushima.
-      </span>
-    </h2>
-    <p class="mt-8 text-sm font-medium leading-relaxed text-[#8c8e8d]">
-      正直にいうと徳島は何もないです。でも住みやすい場所ではあると思います。そんな徳島のごくわずかなスポットを集めました。ここに載せていないものだと、お遍路や鳴門の渦潮なんかもありますね。一度訪れてみてください。
-    </p>
-  </article>
+  <div class="sm:col-span-2 lg:col-start-1 lg:row-start-3 lg:aspect-auto lg:h-full">
+    <AboutCard
+      titleId="tokushima-about-title"
+      headingTag="h2"
+      showImage={false}
+      prefix="I live in"
+      title="Tokushima."
+      suffix=""
+      description="正直にいうと徳島は何もないです。でも住みやすい場所ではあると思います。そんな徳島のごくわずかなスポットを集めました。ここに載せていないものだと、お遍路や鳴門の渦潮なんかもありますね。一度訪れてみてください。"
+    />
+  </div>
 
   <div
     class="aspect-square sm:col-span-2 lg:col-start-3 lg:row-span-2 lg:row-start-2 lg:aspect-auto lg:h-full"
@@ -93,6 +89,7 @@ import museumImage from "../../assets/images/ootuka.jpg";
       image={museumImage}
       imageAlt="大塚国際美術館"
       labelClass="bg-white"
+      url="https://ja.wikipedia.org/wiki/大塚国際美術館"
     />
   </div>
 </div>

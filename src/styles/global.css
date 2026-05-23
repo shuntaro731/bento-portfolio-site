@@ -13,11 +13,19 @@
 @layer base {
   html {
     font-family: var(--font-sans);
+    scrollbar-width: none;
   }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     background: #ffffff;
     color: #0f1115;
     -webkit-font-smoothing: antialiased;
+    -ms-overflow-style: none;
     text-rendering: geometricPrecision;
   }
 }

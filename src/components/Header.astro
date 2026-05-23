@@ -1,15 +1,17 @@
 ---
-import shuntaroLogo from "../assets/shuntaro.svg";
+import shuntaroLogo from "../assets/icons/shuntaro-logo.svg";
 
 const navItems = ["Profile", "Tokushima", "PR"];
 ---
 
 <header class="relative bg-page p-16 text-black">
   <div class="flex items-center justify-between">
+    <!-- ロゴ -->
     <a href="/" class="block">
       <img class="h-5 w-auto" src={shuntaroLogo.src} alt="shuntaroのlogo" />
     </a>
 
+    <!-- ナビゲーション -->
     <nav
       class="fixed bottom-16 left-1/2 z-50 flex -translate-x-1/2 items-center gap-1 rounded-full bg-[#ebe5e5] p-1 text-sm font-bold sm:absolute sm:bottom-auto sm:top-1/2 sm:-translate-y-1/2"
       aria-label="Main navigation"
@@ -33,6 +35,7 @@ const navItems = ["Profile", "Tokushima", "PR"];
       }
     </nav>
 
+    <!-- Contact (リンク先はとりあえずmalitoに) -->
     <a
       href="mailto:"
       class="text-base font-bold leading-none transition-opacity hover:opacity-70"

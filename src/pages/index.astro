@@ -1,7 +1,12 @@
 ---
-import Layout from "../Layout/Layout.astro"
-import ProfileSection from "../components/section/ProfileSection.astro"
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import ProfileContent from "../components/contents/ProfileContent.astro";
 ---
+
 <Layout>
-  <ProfileSection/>
+  <section id="profile" class="min-h-screen bg-page pb-40">
+    <Header />
+    <ProfileContent />
+  </section>
 </Layout>

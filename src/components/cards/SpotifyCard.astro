@@ -1,5 +1,5 @@
 ---
-import spotifyIcon from "../../assets/spotify-logo.svg";
+import spotifyIcon from "../../assets/icons/spotify-logo.svg";
 
 const { class: className = "" } = Astro.props;
 ---
@@ -13,7 +13,7 @@ const { class: className = "" } = Astro.props;
 >
   <img src={spotifyIcon.src} alt="" class="size-11" aria-hidden="true" />
 
-  <div class="min-w-0">
+  <div>
     <p class="text-xs font-bold leading-none text-black/40">最近再生した曲</p>
     <h2 id="spotify-title" class="mt-2 truncate text-2xl font-semibold leading-tight text-black">
       都落ち

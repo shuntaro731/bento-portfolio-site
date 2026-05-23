@@ -1,0 +1,80 @@
+---
+import ProfileCard from "../cards/ProfileCard.astro";
+import SpotifyCard from "../cards/SpotifyCard.astro";
+import GitHubCard from "../cards/GitHubCard.astro";
+import TokushimaCard from "../cards/TokushimaCard.astro";
+import PodcastCard from "../cards/PodcastCard.astro";
+import YouTuberCard from "../cards/YouTuberCard.astro";
+import TokushimaContent from "./TokushimaContent.astro";
+---
+
+<div
+  data-grid-root
+  class="mx-auto w-full max-w-md px-6 pt-13 sm:w-fit sm:max-w-full"
+>
+  <div
+    data-grid-view="profile"
+    class="grid grid-cols-1 items-start gap-6 sm:grid-cols-[repeat(2,minmax(0,13rem))] lg:grid-cols-[repeat(4,14.5rem)] lg:auto-rows-[14.5rem]"
+  >
+    <div class="aspect-[465/228] sm:col-span-2 lg:col-start-1 lg:row-start-1 lg:aspect-auto lg:h-full">
+      <ProfileCard />
+    </div>
+
+    <div class="aspect-square lg:col-start-3 lg:row-start-1">
+      <SpotifyCard />
+    </div>
+
+    <div class="aspect-square lg:col-start-4 lg:row-start-1">
+      <GitHubCard />
+    </div>
+
+    <div class="aspect-square sm:col-span-2 lg:col-start-1 lg:row-span-2 lg:row-start-2">
+      <TokushimaCard />
+    </div>
+
+    <div class="aspect-square lg:col-start-3 lg:row-start-3">
+      <YouTuberCard />
+    </div>
+
+    <div class="aspect-[486/187] sm:col-span-2 lg:col-start-3 lg:row-start-2 lg:col-span-2 lg:aspect-auto lg:h-full">
+      <PodcastCard />
+    </div>
+  </div>
+
+  <div
+    data-grid-view="tokushima"
+    hidden
+  >
+    <TokushimaContent />
+  </div>
+
+  <div
+    data-grid-view="pr"
+    hidden
+    class="grid grid-cols-1 items-start gap-6 sm:grid-cols-[repeat(2,minmax(0,13rem))] lg:grid-cols-[repeat(4,14.5rem)] lg:auto-rows-[14.5rem]"
+  >
+  </div>
+</div>
+
+<script>
+  const gridRoot = document.querySelector("[data-grid-root]");
+  const gridViews = gridRoot?.querySelectorAll("[data-grid-view]");
+  const gridViewIds = new Set(["profile", "tokushima", "pr"]);
+
+  const getActiveGridId = () => {
+    const hashId = location.hash.replace("#", "");
+    return gridViewIds.has(hashId) ? hashId : "profile";
+  };
+
+  const setActiveGrid = () => {
+    const activeGridId = getActiveGridId();
+
+    gridViews?.forEach((view) => {
+      if (!(view instanceof HTMLElement)) return;
+      view.hidden = view.dataset.gridView !== activeGridId;
+    });
+  };
+
+  setActiveGrid();
+  window.addEventListener("hashchange", setActiveGrid);
+</script>

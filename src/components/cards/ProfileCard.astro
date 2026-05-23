@@ -1,12 +1,12 @@
 ---
-import meImage from "../../assets/me.png";
+import meImage from "../../assets/images/profile-avatar.png";
 
 const { class: className = "" } = Astro.props;
 ---
 
 <article
   class:list={[
-    "grid size-full grid-rows-[auto_1fr] rounded-4xl bg-white p-6",
+    "grid size-full grid-rows-[auto_1fr] overflow-hidden rounded-4xl bg-white p-6",
     className,
   ]}
   aria-labelledby="profile-title"

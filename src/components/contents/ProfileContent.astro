@@ -6,6 +6,7 @@ import ImageCard from "../cards/ImageCard.astro";
 import PodcastCard from "../cards/PodcastCard.astro";
 import YouTuberCard from "../cards/YouTuberCard.astro";
 import TokushimaContent from "./TokushimaContent.astro";
+import PrContent from "./PrContent.astro";
 ---
 
 <div
@@ -51,8 +52,8 @@ import TokushimaContent from "./TokushimaContent.astro";
   <div
     data-grid-view="pr"
     hidden
-    class="grid grid-cols-1 items-start gap-6 sm:grid-cols-[repeat(2,minmax(0,13rem))] lg:grid-cols-[repeat(4,14.5rem)] lg:auto-rows-[14.5rem]"
   >
+    <PrContent />
   </div>
 </div>
 

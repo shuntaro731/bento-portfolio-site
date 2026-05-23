@@ -4,6 +4,7 @@ import ImageCard from "../cards/ImageCard.astro";
 import WeatherCard from "../cards/WeatherCard.astro";
 import awaodoriImage from "../../assets/images/awaodori.jpg";
 import museumImage from "../../assets/images/ootuka.jpg";
+import yakimochiImage from "../../assets/images/yakimochi.png";
 ---
 
 <div
@@ -29,15 +30,21 @@ import museumImage from "../../assets/images/ootuka.jpg";
     class="flex aspect-square flex-col justify-between rounded-4xl bg-white p-6 lg:col-start-4 lg:row-start-1"
     aria-labelledby="yakimochi-title"
   >
-    <div class="size-20 rounded-full bg-[#d8d8d8]" aria-hidden="true"></div>
-    <div>
+    <img
+      src={yakimochiImage.src}
+      width={yakimochiImage.width}
+      height={yakimochiImage.height}
+      alt="滝のやきもち"
+      class="h-20 w-27 object-contain object-left"
+    />
+    <div class="min-w-0">
       <h2
         id="yakimochi-title"
-        class="text-xl font-bold leading-tight text-black"
+        class="mt-2 text-lg font-bold leading-tight text-black"
       >
         滝のやきもち
       </h2>
-      <p class="mt-2 text-sm font-medium leading-tight text-black">
+      <p class="mt-2 text-xs font-medium leading-relaxed text-black/55">
         美味しい和菓子なので、焼き立てを食べることをおすすめします。
       </p>
     </div>

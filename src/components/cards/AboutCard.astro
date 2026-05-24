@@ -49,10 +49,14 @@ const shouldClampDescription = clampDescription ?? hasImage;
       id={titleId}
       class:list={[shouldTruncateTitle && "truncate", "leading-tight text-black"]}
     >
-      <span class="text-base font-normal">{prefix}</span>
-      <span class="ml-1 font-serif-display text-2xl font-bold">
-        {title}
-      </span>
+      {prefix && <span class="text-base font-normal">{prefix}</span>}
+      {
+        title && (
+          <span class:list={[prefix && "ml-1", "font-serif-display text-2xl font-bold"]}>
+            {title}
+          </span>
+        )
+      }
       {suffix && <span class="text-xs font-medium">{suffix}</span>}
     </Heading>
 

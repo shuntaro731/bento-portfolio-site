@@ -1,0 +1,31 @@
+---
+import LinkButton from "../LinkButton.astro";
+
+const {
+  href = "",
+  ariaLabel,
+  showButton = true,
+  class: className = "",
+  ...attrs
+} = Astro.props;
+
+const hasHref = typeof href === "string" && href.length > 0;
+const isExternal = hasHref && /^https?:\/\//.test(href);
+const Element = hasHref ? "a" : "article";
+---
+
+<Element
+  {...attrs}
+  href={hasHref ? href : undefined}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noreferrer" : undefined}
+  aria-label={ariaLabel}
+  class:list={[
+    "group relative size-full overflow-hidden rounded-4xl",
+    hasHref && "transition-opacity hover:opacity-90",
+    className,
+  ]}
+>
+  <slot />
+  {hasHref && showButton && <LinkButton />}
+</Element>

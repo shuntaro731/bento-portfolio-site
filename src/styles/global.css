@@ -7,7 +7,11 @@
   --color-nav: #ebe5e5;
   --color-card-dark: #242424;
   --color-muted-card: #d8d8d8;
+  --color-card-soft: #fbfbfb;
+  --color-card-softer: #f7f7f7;
+  --color-card-pink: #fcf4f3;
   --color-accent: #007aff;
+  --color-golf: #22c55e;
   --color-muted-text: #8c8e8d;
   --font-sans:
     "Satoshi", "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",

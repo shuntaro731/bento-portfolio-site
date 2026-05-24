@@ -12,7 +12,7 @@ import BentoGrid from "../BentoGrid.astro";
 
 <div
   data-grid-root
-  class="mx-auto w-full max-w-md px-6 pt-13 sm:w-fit sm:max-w-full"
+  class="mx-auto w-full max-w-md px-6 pt-13 sm:max-w-xl lg:max-w-5xl"
 >
   <BentoGrid data-grid-view="profile">
     <div class="aspect-[465/228] sm:col-span-2 lg:col-start-1 lg:row-start-1 lg:aspect-auto lg:h-full">
@@ -56,13 +56,14 @@ import BentoGrid from "../BentoGrid.astro";
 </div>
 
 <script>
+  import { isSectionId } from "../../constants/sections";
+
   const gridRoot = document.querySelector("[data-grid-root]");
   const gridViews = gridRoot?.querySelectorAll("[data-grid-view]");
-  const gridViewIds = new Set(["profile", "tokushima", "pr"]);
 
   const getActiveGridId = () => {
     const hashId = location.hash.replace("#", "");
-    return gridViewIds.has(hashId) ? hashId : "profile";
+    return isSectionId(hashId) ? hashId : "profile";
   };
 
   const setActiveGrid = () => {

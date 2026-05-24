@@ -1,6 +1,6 @@
 ---
 import githubIcon from "../../assets/icons/github-logo.svg";
-import LinkButton from "../LinkButton.astro";
+import CardLink from "./CardLink.astro";
 
 const {
   class: className = "",
@@ -18,16 +18,14 @@ const imageWidth = image?.width;
 const imageHeight = image?.height;
 ---
 
-<a
+<CardLink
   href={url}
-  target="_blank"
-  rel="noreferrer"
   class:list={[
-    "relative flex size-full items-center justify-center rounded-4xl transition-opacity hover:opacity-90",
+    "flex items-center justify-center",
     backgroundClass,
     className,
   ]}
-  aria-label={ariaLabel}
+  ariaLabel={ariaLabel}
 >
   {
     Icon ? (
@@ -47,6 +45,4 @@ const imageHeight = image?.height;
       />
     )
   }
-
-  <LinkButton />
-</a>
+</CardLink>

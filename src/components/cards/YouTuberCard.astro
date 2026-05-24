@@ -1,16 +1,16 @@
 ---
 import nobamanImage from "../../assets/images/nobaman-avatar.png";
+import CardLink from "./CardLink.astro";
 
 const { class: className = "" } = Astro.props;
 const nobamanUrl = "https://www.youtube.com/channel/UCTW2tw0Mhho72MojB1L48IQ";
 ---
 
-<a
+<CardLink
   href={nobamanUrl}
-  target="_blank"
-  rel="noreferrer"
+  showButton={false}
   class:list={[
-    "flex size-full flex-col justify-between rounded-4xl border-7 border-white bg-[linear-gradient(180deg,#ffffff_0%,#fcf4f3_100%)] p-6 transition-opacity hover:opacity-90",
+    "flex flex-col justify-between border-7 border-white bg-gradient-to-b from-white to-card-pink p-6",
     className,
   ]}
   aria-labelledby="youtuber-title"
@@ -32,4 +32,4 @@ const nobamanUrl = "https://www.youtube.com/channel/UCTW2tw0Mhho72MojB1L48IQ";
       のばまん (nobaman)
     </h2>
   </div>
-</a>
+</CardLink>

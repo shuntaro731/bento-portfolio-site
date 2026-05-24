@@ -15,6 +15,7 @@ const {
 const imageSrc = image?.src ?? image;
 const imageWidth = image?.width;
 const imageHeight = image?.height;
+const hasImage = Boolean(imageSrc);
 ---
 
 <article
@@ -33,7 +34,7 @@ const imageHeight = image?.height;
           aria-hidden="true"
         />
       </span>
-    ) : (
+    ) : hasImage ? (
       <img
         src={imageSrc}
         width={imageWidth}
@@ -41,6 +42,8 @@ const imageHeight = image?.height;
         alt={imageAlt}
         class={imageClass}
       />
+    ) : (
+      <span class={visualClass} aria-hidden="true" />
     )
   }
 

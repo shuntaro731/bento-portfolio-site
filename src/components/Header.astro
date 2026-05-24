@@ -1,7 +1,6 @@
 ---
 import shuntaroLogo from "../assets/icons/shuntaro-logo.svg";
-
-const navItems = ["Profile", "Tokushima", "PR"];
+import { sections } from "../constants/sections";
 ---
 
 <header class="relative bg-page p-16 text-black">
@@ -22,14 +21,14 @@ const navItems = ["Profile", "Tokushima", "PR"];
         aria-hidden="true"
       ></span>
       {
-        navItems.map((item, index) => (
+        sections.map((section, index) => (
           <a
-            href={`#${item.toLowerCase()}`}
+            href={`#${section.id}`}
             data-nav-link
             class="relative z-10 rounded-full px-4 py-2 leading-none transition-colors hover:text-black/70"
             aria-current={index === 0 ? "page" : undefined}
           >
-            {item}
+            {section.label}
           </a>
         ))
       }

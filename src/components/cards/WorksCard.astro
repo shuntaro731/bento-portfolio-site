@@ -1,5 +1,5 @@
 ---
-import LinkButton from "../LinkButton.astro";
+import CardLink from "./CardLink.astro";
 
 const {
   class: className = "",
@@ -11,25 +11,27 @@ const {
 const imageSrc = image?.src ?? image;
 const imageWidth = image?.width;
 const imageHeight = image?.height;
+const hasImage = Boolean(imageSrc);
 ---
 
-<a
+<CardLink
   href={url}
-  target="_blank"
-  rel="noreferrer"
-  class:list={[
-    "group relative block size-full overflow-hidden rounded-4xl bg-muted-card transition-opacity hover:opacity-90",
-    className,
-  ]}
-  aria-label={title || imageAlt}
+  ariaLabel={title || imageAlt}
+  class:list={["block bg-muted-card", className]}
 >
-  <img
-    src={imageSrc}
-    width={imageWidth}
-    height={imageHeight}
-    alt={imageAlt}
-    class="size-full object-cover brightness-85 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
-  />
-
-  <LinkButton />
-</a>
+  {
+    hasImage ? (
+      <img
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+        class="size-full object-cover brightness-85 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
+      />
+    ) : (
+      <div class="grid size-full place-items-center bg-muted-card p-6 text-sm font-bold text-black/45">
+        {title}
+      </div>
+    )
+  }
+</CardLink>

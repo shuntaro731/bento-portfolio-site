@@ -1,5 +1,6 @@
 ---
 import tokushimaImage from "../../assets/images/tokushima-night.jpg";
+import CardLink from "./CardLink.astro";
 
 const {
   class: className = "",
@@ -13,27 +14,30 @@ const {
 const imageSrc = image?.src ?? image;
 const imageWidth = image?.width;
 const imageHeight = image?.height;
-const Element = url ? "a" : "article";
+const hasImage = Boolean(imageSrc);
 ---
 
-<Element
+<CardLink
   href={url || undefined}
-  target={url ? "_blank" : undefined}
-  rel={url ? "noreferrer" : undefined}
-  class:list={[
-    "group relative size-full overflow-hidden rounded-4xl",
-    url && "block transition-opacity hover:opacity-90",
-    className,
-  ]}
+  showButton={false}
+  class:list={["block", className]}
   aria-labelledby={titleId}
 >
-  <img
-    src={imageSrc}
-    width={imageWidth}
-    height={imageHeight}
-    alt={imageAlt}
-    class="size-full object-cover brightness-70 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
-  />
+  {
+    hasImage ? (
+      <img
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+        class="size-full object-cover brightness-70 transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-100"
+      />
+    ) : (
+      <div class="grid size-full place-items-center bg-muted-card p-6 text-sm font-bold text-black/45">
+        {label}
+      </div>
+    )
+  }
 
   <h2
     id={titleId}
@@ -44,4 +48,4 @@ const Element = url ? "a" : "article";
   >
     {label}
   </h2>
-</Element>
+</CardLink>

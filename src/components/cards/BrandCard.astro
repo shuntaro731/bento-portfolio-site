@@ -1,0 +1,52 @@
+---
+import githubIcon from "../../assets/icons/github-logo.svg";
+import LinkButton from "../LinkButton.astro";
+
+const {
+  class: className = "",
+  url = "https://github.com/shuntaro731",
+  ariaLabel = "GitHubを開く",
+  backgroundClass = "bg-card-dark",
+  icon: Icon,
+  iconClass = "size-14",
+  iconStrokeWidth = 2.25,
+  image = githubIcon,
+  imageAlt = "",
+} = Astro.props;
+const imageSrc = image?.src ?? image;
+const imageWidth = image?.width;
+const imageHeight = image?.height;
+---
+
+<a
+  href={url}
+  target="_blank"
+  rel="noreferrer"
+  class:list={[
+    "relative flex size-full items-center justify-center rounded-4xl transition-opacity hover:opacity-90",
+    backgroundClass,
+    className,
+  ]}
+  aria-label={ariaLabel}
+>
+  {
+    Icon ? (
+      <Icon
+        class={iconClass}
+        strokeWidth={iconStrokeWidth}
+        aria-hidden="true"
+      />
+    ) : (
+      <img
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+        class={iconClass}
+        aria-hidden="true"
+      />
+    )
+  }
+
+  <LinkButton />
+</a>

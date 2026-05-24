@@ -1,6 +1,9 @@
 ---
-import { ArrowUpRight, Code2, Figma, Flag, Palette } from "lucide-astro";
+import { Code2, Flag, Palette } from "lucide-astro";
+import figmaIcon from "../../assets/icons/figma.svg";
 import BentoGrid from "../BentoGrid.astro";
+import BrandCard from "../cards/BrandCard.astro";
+import LinkButton from "../LinkButton.astro";
 
 const figmaUrl = "https://www.figma.com/@shuntaro1";
 
@@ -70,22 +73,16 @@ const skills = [
     </ul>
   </article>
 
-  <a
-    href={figmaUrl}
-    target="_blank"
-    rel="noreferrer"
-    class="relative flex aspect-square items-center justify-center rounded-4xl bg-card-dark text-white transition-opacity hover:opacity-90 lg:col-start-4 lg:row-start-1"
-    aria-label="Figmaプロフィールを開く"
-  >
-    <Figma size={58} strokeWidth={2.25} aria-hidden="true" />
-
-    <span
-      class="absolute bottom-4 left-4 grid size-11 place-items-center rounded-full bg-page text-black"
-      aria-hidden="true"
-    >
-      <ArrowUpRight size={18} strokeWidth={2.5} />
-    </span>
-  </a>
+  <div class="aspect-square lg:col-start-4 lg:row-start-1">
+    <BrandCard
+      url={figmaUrl}
+      ariaLabel="Figmaプロフィールを開く"
+      backgroundClass="bg-black"
+      image={figmaIcon}
+      imageAlt="Figma"
+      iconClass="size-17"
+    />
+  </div>
 
   <a
     href={figmaUrl}
@@ -108,12 +105,7 @@ const skills = [
       Design
     </p>
 
-    <span
-      class="absolute bottom-4 left-4 grid size-11 place-items-center rounded-full bg-page text-black"
-      aria-hidden="true"
-    >
-      <ArrowUpRight size={18} strokeWidth={2.5} />
-    </span>
+    <LinkButton />
   </a>
 
   <a
@@ -137,11 +129,6 @@ const skills = [
       Frontend
     </p>
 
-    <span
-      class="absolute bottom-4 left-4 grid size-11 place-items-center rounded-full bg-page text-black"
-      aria-hidden="true"
-    >
-      <ArrowUpRight size={18} strokeWidth={2.5} />
-    </span>
+    <LinkButton />
   </a>
 </BentoGrid>

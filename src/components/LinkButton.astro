@@ -1,0 +1,19 @@
+---
+import { ArrowUpRight } from "lucide-astro";
+
+const {
+  class: className = "",
+  iconSize = 18,
+  strokeWidth = 2.5,
+} = Astro.props;
+---
+
+<span
+  class:list={[
+    "absolute bottom-4 left-4 grid size-11 place-items-center rounded-full bg-page text-black",
+    className,
+  ]}
+  aria-hidden="true"
+>
+  <ArrowUpRight size={iconSize} strokeWidth={strokeWidth} />
+</span>

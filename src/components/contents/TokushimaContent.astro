@@ -1,6 +1,7 @@
 ---
 import AboutCard from "../cards/AboutCard.astro";
 import ImageCard from "../cards/ImageCard.astro";
+import FeatureCard from "../cards/FeatureCard.astro";
 import WeatherCard from "../cards/WeatherCard.astro";
 import awaodoriImage from "../../assets/images/awaodori.jpg";
 import museumImage from "../../assets/images/ootuka.jpg";
@@ -25,29 +26,14 @@ import BentoGrid from "../BentoGrid.astro";
     <WeatherCard />
   </div>
 
-  <article
-    class="flex aspect-square flex-col justify-between rounded-4xl bg-white p-6 lg:col-start-4 lg:row-start-1"
-    aria-labelledby="yakimochi-title"
-  >
-    <img
-      src={yakimochiImage.src}
-      width={yakimochiImage.width}
-      height={yakimochiImage.height}
-      alt="滝のやきもち"
-      class="h-20 w-27 object-contain object-left"
-    />
-    <div class="min-w-0">
-      <h2
-        id="yakimochi-title"
-        class="mt-2 text-lg font-bold leading-tight text-black"
-      >
-        滝のやきもち
-      </h2>
-      <p class="mt-2 text-xs font-medium leading-relaxed text-black/55">
-        美味しい和菓子なので、焼き立てを食べることをおすすめします。
-      </p>
-    </div>
-  </article>
+  <FeatureCard
+    class="lg:col-start-4 lg:row-start-1"
+    titleId="yakimochi-title"
+    title="滝のやきもち"
+    description="美味しい和菓子なので、焼き立てを食べることをおすすめします。"
+    image={yakimochiImage}
+    imageAlt="滝のやきもち"
+  />
 
   <div class="sm:col-span-2 lg:col-start-1 lg:row-start-3 lg:aspect-auto lg:h-full">
     <AboutCard

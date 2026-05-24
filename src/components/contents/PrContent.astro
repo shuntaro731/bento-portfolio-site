@@ -2,18 +2,23 @@
 import { Flag } from "lucide-astro";
 import figmaIcon from "../../assets/icons/figma.svg";
 import desalaboImage from "../../assets/images/desalabo.png";
+import mePcImage from "../../assets/images/me_pc.png";
 import vFesImage from "../../assets/images/v-fes.png";
 import BentoGrid from "../BentoGrid.astro";
 import AboutCard from "../cards/AboutCard.astro";
 import BrandCard from "../cards/BrandCard.astro";
+import FeatureCard from "../cards/FeatureCard.astro";
 import WorksCard from "../cards/WorksCard.astro";
 
 const figmaUrl = "https://www.figma.com/@shuntaro1";
 
 const skills = [
-  "UIデザイン",
-  "フロントエンド",
-  "Astro / Tailwind",
+  "Figma",
+  "Sketch",
+  "TypeScript",
+  "Ruby",
+  "Swift",
+  "React Native",
 ];
 ---
 
@@ -22,45 +27,41 @@ const skills = [
     <AboutCard
       titleId="pr-title"
       headingTag="h2"
-      showImage={false}
+      image={mePcImage}
+      imageAlt="PCを使うShuntaroのイラスト"
+      imageClass="size-17 object-contain"
       prefix="What I’m"
       title="Passionate"
       suffix="About."
-      description="デザインとフロントエンド開発が得意です。ユーザー体験が素晴らしいコンテンツや、いろんな業界のデザイナーの作品を見ることが好きです。このページでは、今まで作ってきた作品や好きなことを仮置きでまとめています。"
-      clampDescription={false}
+      description="デザインとフロントエンド開発が得意です。このページでは、今まで作ってきた作品や、PRポイントをまとめています。"
     />
   </div>
 
-  <article
-    class="flex aspect-square flex-col justify-between rounded-4xl bg-white p-6 sm:col-start-1 lg:col-start-1 lg:row-start-2"
-    aria-labelledby="golf-title"
-  >
-    <span class="grid size-16 place-items-center rounded-full bg-muted-card text-black/65">
-      <Flag size={26} strokeWidth={2.25} aria-hidden="true" />
-    </span>
-
-    <div>
-      <h2 id="golf-title" class="text-lg font-bold leading-none text-black">
-        Golf
-      </h2>
-      <p class="mt-4 text-xs font-bold leading-relaxed text-black/60">
-        最近ベストスコアを更新して、とても嬉しいです。ドライバーが苦手なので練習中です。
-      </p>
-    </div>
-  </article>
+  <FeatureCard
+    class="sm:col-start-1 lg:col-start-1 lg:row-start-2"
+    titleId="golf-title"
+    title="Golf"
+    description="最近ベストスコアを更新して、とても嬉しいです。ドライバーが苦手なので練習中です。"
+    icon={Flag}
+    iconSize={25}
+    visualClass="grid size-13 place-items-center rounded-full bg-[#22c55e] text-white"
+  />
 
   <article
-    class="flex aspect-square flex-col justify-center rounded-4xl bg-white p-6 sm:col-start-2 lg:col-start-2 lg:row-start-2"
+    class="flex aspect-square flex-col items-start rounded-4xl border-7 border-white bg-[linear-gradient(180deg,#ffffff_0%,#fbfbfb_62%,#f7f7f7ff_100%)] p-6 sm:col-start-2 lg:col-start-2 lg:row-start-2"
     aria-labelledby="skills-title"
   >
-    <h2 id="skills-title" class="text-base font-bold leading-tight text-black">
+    <h2
+      id="skills-title"
+      class="font-serif-display text-2xl font-bold leading-tight text-black"
+    >
       My skills
     </h2>
-    <ul class="mt-5 space-y-3 text-xs font-bold leading-none text-black/60">
+    <ul class="mt-4 space-y-2 text-xs font-bold leading-none text-black/55">
       {
         skills.map((skill) => (
-          <li class="flex items-center gap-2">
-            <span class="size-1.5 rounded-full bg-black/35" aria-hidden="true" />
+          <li class="flex items-center gap-2.5">
+            <span class="size-1 rounded-full bg-black/80" aria-hidden="true" />
             {skill}
           </li>
         ))

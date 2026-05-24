@@ -1,0 +1,55 @@
+---
+const {
+  class: className = "",
+  titleId,
+  title,
+  description,
+  image,
+  imageAlt = "",
+  imageClass = "h-20 w-27 object-contain object-left",
+  icon: Icon,
+  iconSize = 26,
+  iconStrokeWidth = 2.25,
+  visualClass = "grid size-16 place-items-center rounded-full bg-muted-card text-black/65",
+} = Astro.props;
+const imageSrc = image?.src ?? image;
+const imageWidth = image?.width;
+const imageHeight = image?.height;
+---
+
+<article
+  class:list={[
+    "flex aspect-square flex-col justify-between rounded-4xl bg-white p-6",
+    className,
+  ]}
+  aria-labelledby={titleId}
+>
+  {
+    Icon ? (
+      <span class={visualClass}>
+        <Icon
+          size={iconSize}
+          strokeWidth={iconStrokeWidth}
+          aria-hidden="true"
+        />
+      </span>
+    ) : (
+      <img
+        src={imageSrc}
+        width={imageWidth}
+        height={imageHeight}
+        alt={imageAlt}
+        class={imageClass}
+      />
+    )
+  }
+
+  <div class="min-w-0">
+    <h2 id={titleId} class="mt-2 text-lg font-bold leading-tight text-black">
+      {title}
+    </h2>
+    <p class="mt-2 text-xs font-medium leading-relaxed text-black/55">
+      {description}
+    </p>
+  </div>
+</article>

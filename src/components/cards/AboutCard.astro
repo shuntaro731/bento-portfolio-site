@@ -8,6 +8,7 @@ const {
   showImage = true,
   image = meImage,
   imageAlt = "Shuntarouの顔アイコン",
+  imageClass = "size-16 object-contain sm:size-18",
   prefix = "I'm",
   title = "Shuntaro.",
   suffix = "a developer and designer from Tokushima.",
@@ -22,6 +23,7 @@ const Heading = headingTag;
 const hasImage = showImage && imageSrc;
 const shouldTruncateTitle = truncateTitle ?? hasImage;
 const shouldClampDescription = clampDescription ?? hasImage;
+const affixClass = "text-sm font-medium";
 ---
 
 <article
@@ -39,7 +41,7 @@ const shouldClampDescription = clampDescription ?? hasImage;
         width={imageWidth}
         height={imageHeight}
         alt={imageAlt}
-        class="size-16 object-contain sm:size-18"
+        class={imageClass}
       />
     )
   }
@@ -49,7 +51,7 @@ const shouldClampDescription = clampDescription ?? hasImage;
       id={titleId}
       class:list={[shouldTruncateTitle && "truncate", "leading-tight text-black"]}
     >
-      {prefix && <span class="text-base font-normal">{prefix}</span>}
+      {prefix && <span class={affixClass}>{prefix}</span>}
       {
         title && (
           <span class:list={[prefix && "ml-1", "font-serif-display text-2xl font-bold"]}>
@@ -57,7 +59,7 @@ const shouldClampDescription = clampDescription ?? hasImage;
           </span>
         )
       }
-      {suffix && <span class="text-xs font-medium">{suffix}</span>}
+      {suffix && <span class:list={[(prefix || title) && "ml-1", affixClass]}>{suffix}</span>}
     </Heading>
 
     <p

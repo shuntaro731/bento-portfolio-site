@@ -2,6 +2,7 @@
 type GridNumber = 1 | 2 | 3 | 4;
 type Shape = "square" | "wide" | "banner" | "tall" | "fill";
 
+// Gridの配置に必要な要素をpropsとして渡しコードの可読性Up
 interface Props {
   shape?: Shape;
   col?: GridNumber;
